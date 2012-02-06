@@ -429,7 +429,7 @@ color: white;
 border-bottom: 1px solid black; /*bottom border of menu link during hover. Should be equal or darker to link's hover's bgcolor*/
 }
 
-<!--[if IE]>
+/*<!--[if IE]>
 .sexypanels li a{ /* Menu link width value for IE */
-width: 100%;
-}
+/*width: 100%;
+}*/
