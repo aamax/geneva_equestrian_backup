@@ -417,7 +417,6 @@ padding: 5px 0; /* Vertical (top/bottom) padding for each menu link */
 text-indent: 8px;
 text-decoration: none;
 border-bottom: 1px solid black; /*bottom border of menu link. Should be equal or darker to link's bgcolor*/
-background-image: /images/menu_bkrnd.jpg;
 }
 
 .sexypanels li a:visited, .sexypanels li a:active{
