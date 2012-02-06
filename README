@@ -1,43 +1,5 @@
-This application is a starting point for basic rails pages that offers user
-model/view/controller support.  this was built from an existing site and cleaned
-up - hopefully most/all of the non-user relevant items have been cleaned out well
-but there may be some extraneous crap left over (no guarantees on that one)
+This site is a custom Rails dev effort for the Lake Geneva equestrian organization.
 
-The basics are built on the user model form Michael Hartl's tutorial.  It has been ported
-to rails 3.1.x
+it is built on top of a basic structure from Michael Hartl's rails tutorial.
 
-User demographic data is kept for basic info like address, phone etc.  
-users can edit and manage their own data 
-only admin users can edit other users data.
-only admin users can delete users.
-
-specific sites should use this as a starting place and then expand site
-functionality from here.
-
-the current setup is configured to use sqllite for dev and test
-
-		
-PAGES:
-	home - includes headers and footers as well as a partial for
-		signed in and not signed in
-	about - basic dummy about page
-	signup - page to allow users to create an account
-	signin - page to allow users to log in
-			logins use email addresses
-			passwords are encrypted and use a salt key for added security
-			sessions are managed with cookies and the user will be remembered 
-				indefinitely in this version
-	signout - page/link to log user out and clean up cookies/session/ etc.
-	construction - a page to stub out future feature/page expansions
-	
-user model:
-	the model has support for demographic info and the notion of an admin user
-		or a teamleader user.
-
-rake task: db:populate
-	this task will use a userdata.csv file found in the parent dir to the project
-	to populate the development database with data.  
-	
-RSpec Tests:
-	rspec tests are in place to ensure the user model etc. is solid
 
