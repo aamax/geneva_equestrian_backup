@@ -15,13 +15,8 @@ def restore_users
   if File.exists?(filename) 
     puts "Loading Users From File #{filename}"
 
-    bpastHeader = false
     
     CSV.foreach(filename) do |row|
-      if !bpastHeader
-        bpastHeader = true
-        next
-      end
     
       sPassword = "password"
       
@@ -30,6 +25,7 @@ def restore_users
         row[1] = sval[0]
         row[3] = sval[1]
       end
+      
       
       aHost = User.create!(:name => row[0],
                          :fname => row[1],
@@ -41,8 +37,7 @@ def restore_users
                          :street => row[8],
                          :city => row[9],
                          :state => row[10],
-                         :zip => row[11],
-                         :startdate => row[12],                           
+                         :zip => row[11],                                                  
                          :password => "#{sPassword}",
                          :password_confirmation => "#{sPassword}") 
       if row[13] == "true"

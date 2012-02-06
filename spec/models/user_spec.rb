@@ -167,19 +167,16 @@ end
 #  midinit            :string(255)
 #  lname              :string(255)
 #  email              :string(255)
-#  login              :string(255)
 #  homephone          :string(255)
 #  cellphone          :string(255)
 #  street             :string(255)
 #  city               :string(255)
 #  state              :string(255)
 #  zip                :string(255)
-#  startdate          :integer
 #  admin              :boolean         default(FALSE)
 #  encrypted_password :string(255)
 #  salt               :string(255)
 #  created_at         :datetime
 #  updated_at         :datetime
-#  teamleader         :boolean
 #
 

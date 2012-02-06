@@ -1,10 +1,33 @@
+# == Schema Information
+#
+# Table name: users
+#
+#  id                 :integer         not null, primary key
+#  name               :string(255)
+#  fname              :string(255)
+#  midinit            :string(255)
+#  lname              :string(255)
+#  email              :string(255)
+#  homephone          :string(255)
+#  cellphone          :string(255)
+#  street             :string(255)
+#  city               :string(255)
+#  state              :string(255)
+#  zip                :string(255)
+#  admin              :boolean         default(FALSE)
+#  encrypted_password :string(255)
+#  salt               :string(255)
+#  created_at         :datetime
+#  updated_at         :datetime
+#
+
 require 'digest'
 
 class User < ActiveRecord::Base
   attr_accessor :password
   attr_accessible :name, :email, :password, :password_confirmation, :admin,
                   :street, :city, :state, :zip, :homephone, :cellphone, 
-                  :startdate, :fname, :lname
+                  :fname, :lname
   
   email_regex = /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i
   startdate_regex = /[12][09][\d]{2}/
@@ -16,7 +39,6 @@ class User < ActiveRecord::Base
   
   validates   :lname, :presence => true            
 
-        
   validates   :email, :presence => true,  
             :format => { :with => email_regex },
             :uniqueness => { :case_sensitive => false }
@@ -26,11 +48,7 @@ class User < ActiveRecord::Base
    validates   :password,  :confirmation => true ,
                  :length => { :within => 6..40 }, :if => :password_is_not_blank?
                 
-  validates   :startdate, :presence => true,
-              :format => { :with => startdate_regex }
-  
   before_save :encrypt_password
-  before_save :format_phoneNumbers
     
   default_scope :order => "name asc" 
     
