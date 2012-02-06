@@ -10,7 +10,7 @@ namespace :db do
 end
 
 def restore_users
-  filename = "../userdata.csv"
+  filename = "../geneva_userdata.csv"
 
   if File.exists?(filename) 
     puts "Loading Users From File #{filename}"
@@ -36,7 +36,6 @@ def restore_users
                          :midinit => row[2],
                          :lname => row[3],
                          :email => row[4],
-                         :login => row[5],
                          :homephone => row[6],
                          :cellphone => row[7],
                          :street => row[8],
@@ -49,9 +48,6 @@ def restore_users
       if row[13] == "true"
         aHost.toggle!(:admin)
       end  
-      if row[14] == "true"
-        aHost.toggle!(:teamleader)
-      end                         
 
       puts "imported user: " + row[0]            
     end # CSV

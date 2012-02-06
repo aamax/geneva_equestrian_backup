@@ -11,13 +11,11 @@
 
 <table>  
   <% @users.each do |user| %>
-    <% if user.fname != "aamaxtest" %>
-      <% if current_user.admin? %>
-        <%= render 'user_entry_admin', :object => user %>
-      <% else %>
-        <%= render 'user_entry', :object => user %>
-      <% end %>  
-     <% end %>
+    <% if current_user.admin? %>
+      <%= render 'user_entry_admin', :object => user %>
+    <% else %>
+      <%= render 'user_entry', :object => user %>
+    <% end %>  
   <% end %>
 </table>  
 

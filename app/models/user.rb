@@ -1,36 +1,10 @@
-# == Schema Information
-#
-# Table name: users
-#
-#  id                 :integer         not null, primary key
-#  name               :string(255)
-#  fname              :string(255)
-#  midinit            :string(255)
-#  lname              :string(255)
-#  email              :string(255)
-#  login              :string(255)
-#  homephone          :string(255)
-#  cellphone          :string(255)
-#  street             :string(255)
-#  city               :string(255)
-#  state              :string(255)
-#  zip                :string(255)
-#  startdate          :integer
-#  admin              :boolean         default(FALSE)
-#  encrypted_password :string(255)
-#  salt               :string(255)
-#  created_at         :datetime
-#  updated_at         :datetime
-#  teamleader         :boolean
-#
-
 require 'digest'
 
 class User < ActiveRecord::Base
   attr_accessor :password
   attr_accessible :name, :email, :password, :password_confirmation, :admin,
                   :street, :city, :state, :zip, :homephone, :cellphone, 
-                  :startdate, :fname, :lname, :teamleader, :login
+                  :startdate, :fname, :lname
   
   email_regex = /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i
   startdate_regex = /[12][09][\d]{2}/
@@ -96,10 +70,6 @@ class User < ActiveRecord::Base
     
     def secure_hash(aString)
       Digest::SHA2.hexdigest(aString)
-    end
-    
-    def format_phoneNumbers
-      # nop for now
     end
 end
 
