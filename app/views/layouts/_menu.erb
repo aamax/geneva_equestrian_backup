@@ -1,0 +1,22 @@
+<ul class="sexypanels">
+	<% if signed_in? %>
+		<li><%= link_to "Users", users_path %></li>
+	    <li><%= link_to "Sign out", signout_path, :method => :delete %></li>
+	<% else %>
+		<li><%= link_to "About Us", "#" %></li>
+		<li><%= link_to "Cross Country", "#" %></li>
+		<li><%= link_to "Facility", "#" %></li>
+		<li><%= link_to "Training", "#" %></li>
+		<li><%= link_to "Boarding", "#" %></li>
+		<li><%= link_to "Clinics", "#" %></li>
+		<li><%= link_to "Rider's Club", "#" %></li>
+		<li><%= link_to "Calendar", "#" %></li>
+		<li><%= link_to "GE Schooling Shows", "#" %></li>
+		<li><%= link_to "Sales", "#" %></li>
+		<li><%= link_to "Directions", "#" %></li>
+		<li><%= link_to "Links", "#" %></li>
+		<li><%= link_to "Contact Us", "#" %></li>
+		<li><%= link_to "Sign in", signin_path %></li>
+	<% end %>
+</ul>
+

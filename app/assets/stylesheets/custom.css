@@ -1,3 +1,29 @@
+.leftmenu {
+	vertical-align: top;
+	padding: 0 0 0 0;
+	margin 0 0 0 0;
+	width: 190px;
+}
+
+.maincontent {
+	vertical-align: top;
+	padding: 0 0 0 0;
+	margin 0 0 0 0;
+}
+
+div.exampleborderradius {
+    background-color: #EEEEEE;
+    border-radius: 15px 15px 15px 15px;
+    margin-right: 5px;
+    margin-top: 0px;
+    padding: 5px;
+    text-align: left;
+}
+
+.tdtop {
+	vertical-align: top;
+}
+
 .shifttypeselect {
   width: 100px;
 }
@@ -177,8 +203,7 @@ nav {
 }
 
 nav {
-  background-color: white;
-  padding: 0 0.7em;
+  padding: 0.5em 0.7em;
   white-space: nowrap;
 }
 
@@ -229,7 +254,8 @@ footer {
 }
 
 footer nav {
-  float: none;  
+  	float: none;  
+	background-color: #ADA96E;
 }
 
 /* User show page */
@@ -368,4 +394,43 @@ div.user_info span.user_name {
 
 div.user_info span.microposts {
   font-size: 80%;
+}
+
+.sexypanels{
+list-style-type: none;
+margin: 0;
+padding: 0;
+width: 180px; /* width of menu */
+}
+
+.sexypanels li{
+border-bottom: 1px solid white; /* white border beneath each menu item */
+}
+
+.sexypanels li a{
+background: #4C787E url(media/sexypanelright.gif) no-repeat right top; /* #333 url(media/sexypanelright.gif) no-repeat right top; /*color of menu by default*/
+font: bold 13px "Lucida Grande", "Trebuchet MS", Verdana;
+display: block;
+color: white;
+width: auto;
+padding: 5px 0; /* Vertical (top/bottom) padding for each menu link */
+text-indent: 8px;
+text-decoration: none;
+border-bottom: 1px solid black; /*bottom border of menu link. Should be equal or darker to link's bgcolor*/
+background-image: /images/menu_bkrnd.jpg;
+}
+
+.sexypanels li a:visited, .sexypanels li a:active{
+color: white;
+}
+
+.sexypanels li a:hover{
+background-color: black; /*color of menu onMouseover*/
+color: white;
+border-bottom: 1px solid black; /*bottom border of menu link during hover. Should be equal or darker to link's hover's bgcolor*/
+}
+
+<!--[if IE]>
+.sexypanels li a{ /* Menu link width value for IE */
+width: 100%;
 }
