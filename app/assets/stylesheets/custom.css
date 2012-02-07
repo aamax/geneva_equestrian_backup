@@ -131,7 +131,7 @@ table.indexmenutable {
 
 .headerbanner {
   width: 800px;
-  height: 100px;
+  height: 160px;
   padding-top: 10;
   background-color: brown;
 }
@@ -248,7 +248,7 @@ nav ul li a:hover {
 footer {
   text-align: left;
   margin-top: 5px;
-  margin-bottom: 5px;
+  margin-bottom: 0px;
   width: 800px;
   margin-left: auto;
   margin-right: auto;
